@@ -1,0 +1,22 @@
+---
+## Initial Prompt 2
+---
+----------------------------------
+Tool: ChatGPT
+Date: 2025-05-22
+----------------------------------
+Me: I want to make a Colab weather dashboard—what libraries do I need, and how do I set up the initial display area?
+AI: Use requests for API calls, ipywidgets for interactive controls, and IPython.display to manage output. First, import these and call display(...) at the end to render your main container.
+
+import requests
+import ipywidgets as widgets
+from IPython.display import display, clear_output
+
+
+Me: How do I pull current weather for a Mauritius city and parse it into clear labels?
+Ai: Write a get_weather() that calls OpenWeatherMap, handles errors via raise_for_status(), and returns a dict mapping friendly keys to formatted values.
+
+```python
+url = "https://api.openweathermap.org/data/2.5/weather"
+params = {"q": f"{city},MU", "appid": api_key, "units": "metric"}
+```
